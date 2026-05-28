@@ -1,4 +1,16 @@
 import "./ProjectModal.css";
+import type { Project } from "../../types/Project";
+import LinkIcon from "./LinkIcon";
+
+interface ProjectModalProps {
+  project: Project;
+  onClose: () => void;
+  onNext: () => void;
+  onPrev: () => void;
+  currentIndex: number;
+  totalProjects: number;
+  onAnalyze?: () => void;
+}
 
 export default function Modal({
   project,
@@ -7,7 +19,7 @@ export default function Modal({
   onPrev,
   currentIndex,
   totalProjects,
-}) {
+}: ProjectModalProps) {
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -22,17 +34,7 @@ export default function Modal({
                   className="modal-title-link"
                 >
                   {project.title}
-                  <svg
-                    className="link-icon"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                  </svg>
+                  <LinkIcon />
                 </a>
               ) : (
                 project.title
@@ -49,9 +51,9 @@ export default function Modal({
 
         <p className="modal-description">{project.description}</p>
 
-        {(project.technologies || project.techs) && (
+        {project.techs && project.techs.length > 0 && (
           <div className="modal-techs">
-            {(project.technologies || project.techs).map((tech, i) => (
+            {project.techs.map((tech, i) => (
               <span key={i} className="tech-badge">
                 {tech}
               </span>
@@ -59,9 +61,9 @@ export default function Modal({
           </div>
         )}
 
-        {(project.codeSnippet || project.code) && (
+        {project.code && (
           <div className="modal-code">
-            <code>{project.codeSnippet || project.code}</code>
+            <code>{project.code}</code>
           </div>
         )}
 
