@@ -1,0 +1,117 @@
+.carousel {
+  position: absolute;
+  top: 43%;
+  left: 51%;
+  transform: translateX(-50%);
+  width: 20%;
+  height: 23%;
+  border-radius: 50%;
+}
+
+.carousel-content {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+.carousel-content h3 {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(8px, 1.95vw, 24px);
+  font-weight: 900;
+  margin: 0px;
+  width: 90%;
+}
+.carousel-content p {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(4px, 1.56vw, 22px);
+  font-weight: 500;
+  margin: 0px;
+  width: 90%;
+}
+/* Bouton demi-cercle lumineux */
+.carousel-action-button {
+  position: absolute;
+  width: 40%;
+  height: 20%;
+  bottom: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: radial-gradient(
+    ellipse at center bottom,
+    rgba(120, 180, 255, 0.6) 0%,
+    rgba(80, 150, 255, 0.4) 50%,
+    rgba(60, 120, 255, 0.2) 100%
+  );
+  box-shadow:
+    0 0 15px rgba(120, 180, 255, 0.5),
+    inset 0 -2px 8px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(5px, 1.5vw, 20px);
+  color: rgba(180, 220, 255, 0.95);
+  font-weight: 700;
+}
+
+.carousel-action-button:hover {
+  background: radial-gradient(
+    ellipse at center bottom,
+    rgba(150, 200, 255, 0.8) 0%,
+    rgba(100, 170, 255, 0.6) 50%,
+    rgba(80, 140, 255, 0.3) 100%
+  );
+  box-shadow:
+    0 0 25px rgba(120, 180, 255, 0.8),
+    inset 0 -2px 10px rgba(255, 255, 255, 0.4),
+    0 0 40px rgba(120, 180, 255, 0.4);
+  transform: translateX(-50%) scale(1.05);
+}
+
+.carousel-indicator {
+  position: absolute;
+  top: 68%;
+  left: 51.2%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background-color: rgba(120, 180, 255, 0.9);
+  color: white;
+  padding: 0px clamp(4px, 0.78vw, 10px);
+  border-radius: clamp(3px, 0.65vw, 8px);
+  font-size: clamp(9px, 1.69vw, 17px);
+  font-weight: 800;
+  /* DEBUG: décommentez pour visualiser */
+  /* outline: 2px solid orange; */
+}
+
+.carousel-button button {
+  position: absolute;
+  z-index: 100;
+  top: 70%;
+  padding: 0px clamp(5px, 0.91vw, 12px) clamp(2px, 0.39vw, 5px);
+  font-size: clamp(10px, 1.95vw, 20px);
+  font-weight: 900;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.carousel-button button:first-of-type {
+  right: 63%;
+}
+
+.carousel-button button:last-of-type {
+  left: 65.6%; /* 495/768 */
+}

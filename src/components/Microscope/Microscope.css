@@ -1,0 +1,31 @@
+.microscope-container {
+  position: relative;
+  width: 100vw;
+  aspect-ratio: 795 / 588;
+}
+
+.microscope-container img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.optical-field {
+  position: absolute;
+  top: 40.2%;
+  left: 41%;
+  width: 20%;
+  height: 27%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(
+    circle,
+    rgba(180, 220, 255, 0.9) 0%,
+    rgba(20, 40, 60, 0.95) 75%
+  );
+
+  box-shadow:
+    0 0 12px rgba(120, 180, 255, 0.6),
+    inset 0 0 18px rgba(255, 255, 255, 0.4);
+}
